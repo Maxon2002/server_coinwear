@@ -28,9 +28,14 @@ let objectProduct = {
     'Shiba Army': {firstPrice: '35.99$', discount: '12$'},
 }
 
-setTimeout(()=> console.log('yes'), 10000)
+setTimeout(()=> console.log('yes2'), 10000)
 
-let server = https.createServer((req, res) => {
+let options = {
+  key: fs.readFileSync('test/fixtures/keys/agent2-key.pem'),
+  cert: fs.readFileSync('test/fixtures/keys/agent2-cert.cert')
+};
+
+let server = https.createServer(options, (req, res) => {
     console.log('req')
     if (req.method == 'POST') {
         let body = ''
