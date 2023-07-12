@@ -32,7 +32,8 @@ setTimeout(()=> console.log('yes2'), 10000)
 
 let options = {
   key: fs.readFileSync('key.pem'),
-  cert: fs.readFileSync('cert.pem')
+  cert: fs.readFileSync('cert.pem'),
+    ca: fs.readFileSync('ca.pem')
 };
 
 let server = https.createServer(options, (req, res) => {
