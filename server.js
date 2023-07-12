@@ -31,8 +31,8 @@ let objectProduct = {
 setTimeout(()=> console.log('yes2'), 10000)
 
 let options = {
-  key: fs.readFileSync('test/fixtures/keys/agent2-key.pem'),
-  cert: fs.readFileSync('test/fixtures/keys/agent2-cert.cert')
+  key: fs.readFileSync('key.pem'),
+  cert: fs.readFileSync('cert.pem')
 };
 
 let server = https.createServer(options, (req, res) => {
