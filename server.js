@@ -28,7 +28,7 @@ let objectProduct = {
     'Shiba Army': {firstPrice: '35.99$', discount: '12$'},
 }
 
-setTimeout(()=> console.log('yes'), 5000)
+setTimeout(()=> console.log('yes'), 10000)
 
 let server = http.createServer((req, res) => {
     console.log('req')
@@ -79,7 +79,7 @@ let server = http.createServer((req, res) => {
 
 })
 server.listen(PORT, () => {
-    console.log(PORT)
+    setTimeout(()=> console.log(PORT), 10000)
 })
 // console.log(process.env.PORT)
 
