@@ -1,7 +1,7 @@
 let fs = require('fs')
 let path = require('path')
 
-let http = require('http')
+let https = require('https')
 
 let PORT = process.env.PORT || 5000
 
@@ -30,7 +30,7 @@ let objectProduct = {
 
 setTimeout(()=> console.log('yes'), 10000)
 
-let server = http.createServer((req, res) => {
+let server = https.createServer((req, res) => {
     console.log('req')
     if (req.method == 'POST') {
         let body = ''
@@ -39,9 +39,9 @@ let server = http.createServer((req, res) => {
         })
         req.on('end', () => {
             // console.log(req.headers)
-            if (req.headers.origin == 'http://coinwear.net') {
+            if (req.headers.origin == 'https://coinwear.net') {
                 res.writeHead(200, {
-                    'Access-Control-Allow-Origin': 'http://coinwear.net',
+                    'Access-Control-Allow-Origin': 'https://coinwear.net',
                     'Access-Control-Allow-Credentials': 'true',
                 })
 
@@ -63,9 +63,9 @@ let server = http.createServer((req, res) => {
         req.on('end', () => {
             console.log('yep')
             console.log(req.headers)
-            if (req.headers.origin == 'http://coinwear') {
+            if (req.headers.origin == 'https://coinwear') {
                 res.writeHead(200, {
-                    'Access-Control-Allow-Origin': 'http://coinwear',
+                    'Access-Control-Allow-Origin': 'https://coinwear',
                     'Access-Control-Allow-Credentials': 'true',
                 })
                 if (body) res.end('Ваше имя')
