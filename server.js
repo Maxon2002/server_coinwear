@@ -37,9 +37,9 @@ let server = http.createServer((req, res) => {
         })
         req.on('end', () => {
             // console.log(req.headers)
-            if (req.headers.origin == 'http://coinwear') {
+            if (req.headers.origin == 'http://coinwear.net') {
                 res.writeHead(200, {
-                    'Access-Control-Allow-Origin': 'http://coinwear',
+                    'Access-Control-Allow-Origin': 'http://coinwear.net',
                     'Access-Control-Allow-Credentials': 'true',
                 })
 
