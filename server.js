@@ -28,8 +28,10 @@ let objectProduct = {
     'Shiba Army': {firstPrice: '35.99$', discount: '12$'},
 }
 
-let server = http.createServer((req, res) => {
+setTimeout(()=> console.log('yes'), 5000)
 
+let server = http.createServer((req, res) => {
+    console.log('req')
     if (req.method == 'POST') {
         let body = ''
         req.on('data', (chunk) => {
@@ -76,8 +78,8 @@ let server = http.createServer((req, res) => {
 
 
 })
-server.listen(5000, () => {
-    // console.log(PORT)
+server.listen(PORT, () => {
+    console.log(PORT)
 })
 // console.log(process.env.PORT)
 
