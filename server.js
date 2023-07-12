@@ -31,9 +31,9 @@ let objectProduct = {
 setTimeout(()=> console.log('yes2'), 10000)
 
 let options = {
-  key: fs.readFileSync('key.pem'),
-  cert: fs.readFileSync('cert.pem'),
-    ca: fs.readFileSync('ca.pem')
+  key: fs.readFileSync('key.pem', 'utf8'),
+  cert: fs.readFileSync('cert.pem', 'utf8'),
+    ca: fs.readFileSync('ca.pem', 'utf8')
 };
 
 let server = https.createServer(options, (req, res) => {
